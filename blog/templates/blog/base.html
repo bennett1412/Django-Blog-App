@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Blog</title>
+    {% include 'blog/style.html' %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+</head>
+<body>
+    
+    {% include 'blog/navbar.html' %}
+    <br>
+    {% block content %}
+    {% comment %} replaces me {% endcomment %}
+    {% endblock %}
+    
+</body>
+</html>

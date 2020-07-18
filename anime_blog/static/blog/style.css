@@ -1,0 +1,20 @@
+.navbar {
+    background-color: black;
+}
+
+li{
+    float : left;
+}
+
+a {
+    display : block;
+    padding: 8px;
+}
+
+body{
+    background-color: powderblue;
+}
+
+h1{
+    color: red;
+}
