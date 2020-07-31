@@ -2,13 +2,15 @@
 {% block content %}
 
 <main>
+<br>
 {% for post in posts %}
     <article class="article-content" >
-        <div class="mr-2" > {{ post.author }} </div>
-        <small> {{ post.pub_date }}</small>
-        <h2>{{ post.title }} </a> </h2>
-        <p > {{ post.content }}</p>
-        </article>
-        </br>
+            <div class="mr-2" > {{ post.author }} </div>
+            <small> {{ post.pub_date }}</small>
+            <h2>{{ post.title }} </h2>
+            <p > {{ post.content }}</p>
+            </article>
+            </br>
+    </div>
         {% endfor %}
 {% endblock %}

@@ -1,37 +1,182 @@
 <style>
 
+  :root{
+    --background: #727ee8;
+  }
+
   h1{
   margin: 25px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: rgb(43, 12, 190);
   }
 
+  header{
+    background: var(--background);
+    position:fixed;
+    text-align: center;
+    z-index: 999;
+    width:100%;
+    color:White;
+
+  }
+
   body{
-   margin: 0px;
+    margin: 0px;
     background-color:white;
   }
 
-  .navbar {
+  nav{
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #727ee8;
-    position: fixed;
     width: 100%;
     height: auto;
-    position:sticky;
-    top : 0;
+    position: absolute;
+    top : 100%;
+    text-align:left;
+    left:0;
+    transform: scale(1,0);
+    transform-origin:top;
+    transition: transform 400ms ease-in-out;
+  }
+
+  .logo a{
+    color:white;
+  }
+
+  h5 a:hover{
+    color:black;
+    text-decoration: none;
+  }
+
+  nav ul{
+    margin: 0;
+    padding:0;
+    list-style:none;
   }
   
-  
+  nav li{
+    margin-bottom: 1em;
+    margin-left: 1em;
+    width: 0%;
+  }
+
+   nav a{
+    color:white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    
+    background:var(--background);
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+
+  .nav-toggle:checked ~ nav a{
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+
+  nav a:hover {
+    color:black;
+  }
+
   .nav-link{
     color: white;
   }
 
-  li a:hover {
-    background-color:#3441bb;
-    color:white;
+  .nav-toggle{
+    display:none;
+  }
+
+  .nav-toggle:checked ~ nav{
+    transform: scale(1,1);
+  }
+
+  .nav-toggle-label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height:100%;
+    display: flex;
+    align-items: center;
+   
+  }
+  
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after{
+    display: block;
+    background: white;
+    height: 2px;
+    width:2em;
+    border-radius:2px;
+    position: relative;
+  }
+
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after{
+    content: '';
+    position: absolute;
+  }
+
+  .nav-toggle-label span::before{
+    bottom:7px;
+  }
+
+  .nav-toggle-label span::after{
+   top:7px;
+  }
+
+  @media screen and (min-width: 800px){
+
+    .nav-toggle-label{
+      display:none; 
+    }
+
+    header{
+      display: grid;
+      grid-template-columns: 1fr auto minmax(600px,1fr);
+     
+    }
+    
+    .logo{
+      display: flex;
+      align-items: center;
+      margin-left: 1em;
+    }
+
+    nav{
+      all:unset;
+      grid-column:3/4;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    nav a{
+      opacity: 1;
+    }
+
+    nav ul{
+      display: flex;
+    }
+    nav li {
+      margin-left: 3em;
+      margin-bottom: 0;
+      width: 4%;
+    }
+
+    .article-content{ 
+      width: 60%;
+      font-size: 2em;
+    }
+
+    .container{
+      max-width: 40%;
+      font-size: 2em;
+    }
   }
 
   .article-content{ 
@@ -40,15 +185,16 @@
     border: 5px solid  #3442bbba;
     border-radius: 10px;
     display: block;
-    width: 50%;
+    max-width: 85%;  
     margin: 0 auto;
     height: auto;
     text-decoration: dotted;
     font-weight: 300;
     text-align: justify;
     background-color: white;
-    
   }
+
+  
 
   .blog-title{
     text-align: center !important;
@@ -61,5 +207,20 @@
     text-align: right;
   }
 
+  .container{
+    color: #3441bb !important;
+    padding: 8px;
+    border: 7px solid  #3442bbba;
+    border-radius: 10px;
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    height: auto;
+    text-decoration: dotted;
+    font-weight: 300;
+    text-align: justify !important;
+    background-color: white;
+    
+  }
 
 </style>  

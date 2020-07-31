@@ -1,17 +1,23 @@
 {% extends 'blog/base.html' %}
+{% load widget_tweaks %}
 {% block content %}
 <div class='container'>
 <form method="POST">{% csrf_token %}
 
-<fieldset class="form-group">
-{{ form.as_p }}
-</fieldset>
-
-<button class="btn btn-outline-info" type="submit"> register </button>
-
-<small>
+{% for field in form %}
+    <p>
+      <strong>{{ field.label_tag }}</strong>
+      <span class="float-right"> {{ field | attr:"class:form-control" }} </span>
+      {% for error in field.errors %}
+        <p style="color: red">{{ error }}</p>
+      {% endfor %}
+    </p>
+ {% endfor %}   
+<button class="btn btn-outline-info" style="margin:5px" type="submit"> Register </button>
+<br>
+<span><strong>
     Already have an account? <a href="#">Sign in</a>
-</small>
+</strong></span>
 
 </form>
 </div>
