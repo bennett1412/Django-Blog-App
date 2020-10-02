@@ -3,17 +3,13 @@
 
 <main>
 <br>
+<h1 class="mb-3" > Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
 {% for post in posts %}
         <article class="article-content" >
             <legend class="border-bottom mb-4">
-            
-            <img align="left" class="rounded-circle article-img " src=" {{post.author.profile.image.url}}">    
-            
-            
-            <a class="mr-2 author-name" href="{% url 'blog:user-posts' post.author %}"> {{ post.author }} </a>
-            
+            <img align="left" class="rounded-circle article-img" src=" {{post.author.profile.image.url}}">    
+            <span class="mr-2" > {{ post.author }} </span>
             <div class="date"> {{ post.pub_date|date:'d M, Y' }}</div> 
-            
             </legend>
             <h2><a href="{% url 'blog:post-detail' post.id %}" class="article-title"> {{ post.title }} </a></h2>
             <p> {{ post.content }}</p>

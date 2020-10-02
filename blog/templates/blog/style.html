@@ -25,6 +25,20 @@
     background-color:white;
   }
 
+  .account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+    object-fit: contain;
+  }
+  
+  .article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
+    object-fit: cover;
+  }
   nav{
     list-style-type: none;
     margin: 0;
@@ -139,13 +153,15 @@
     header{
       display: grid;
       grid-template-columns: 1fr auto minmax(600px,1fr);
-     
     }
+
+    
     
     .logo{
       display: flex;
       align-items: center;
       margin-left: 1em;
+      margin-top:7px;
     }
 
     nav{
@@ -163,20 +179,39 @@
       display: flex;
     }
     nav li {
-      margin-left: 3em;
+      margin-left: 1em;
       margin-bottom: 0;
-      width: 4%;
+      width: 100%;
     }
-
+    .last-nav{
+      margin-right:10px;
+    }
     .article-content{ 
       width: 60%;
-      font-size: 2em;
+      font-size: medium;
     }
 
     .container{
-      max-width: 40%;
-      font-size: 2em;
+      max-width: 47%;
+      font-size: medium;
     }
+  }
+
+  .author-name {
+    color: #3441bb;
+  }
+  a.author-name:hover {
+    color: #828ef3;
+    text-decoration: none;
+  }
+
+  .article-title {
+    color: #3441bb;
+  }
+
+  a.article-title:hover {
+    color: #828ef3;
+    text-decoration: none;
   }
 
   .article-content{ 
@@ -194,7 +229,10 @@
     background-color: white;
   }
 
-  
+  .profile-img{
+    display: flex;
+    align-content: flex-start;
+  }
 
   .blog-title{
     text-align: center !important;
@@ -213,14 +251,27 @@
     border: 7px solid  #3442bbba;
     border-radius: 10px;
     display: block;
+    position: relative;
+    top:2em;
     width: 80%;
     margin: 0 auto;
     height: auto;
     text-decoration: dotted;
     font-weight: 300;
     text-align: justify !important;
-    background-color: white;
-    
+    background-color: white; 
   }
 
+  .date{
+    font-size: 1rem;
+    color: #2f3fccc0;
+  }
+
+  .profile-text{
+    text-align:center;
+  }
+  
+  .page-buttons{
+    text-align:center;    
+  }
 </style>  

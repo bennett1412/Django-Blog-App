@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<div class='container'>
+<form method="POST">{% csrf_token %}
+<legend class="border-bottom mb-4"> Delete Post </legend>
+<h5>Are you sure you want to delete the post "{{ object.title }}" ?</h5>
+
+<button class="btn btn-outline-danger" style="margin-top:10px" type="submit"> Yes, Delete </button>
+<a class="btn btn-outline-secondary" href="{% url 'blog:post-detail' object.id %}" style="margin-top:10px"> Cancel </a>
+<br>
+</form>
+</div>
+{% endblock %}

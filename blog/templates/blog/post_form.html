@@ -3,23 +3,21 @@
 {% block content %}
 <div class='container'>
 <form method="POST">{% csrf_token %}
-<legend class="border-bottom mb-4"> Join Now</legend>
+<legend class="border-bottom mb-4"> Blog Post </legend>
 {% for field in form %}
     <p>
-      <strong>{{ field.label_tag }}
+      <strong>{{ field.label_tag }}</strong>
+      
       <span class="float-right"> {{ field | attr:"class:form-control" }} </span>
-      </strong>
+      
       {% for error in field.errors %}
         <p style="color: red">{{ error }}</p>
       {% endfor %}
     </p>
  {% endfor %}   
-<button class="btn btn-outline-info" style="margin:5px" type="submit"> Register </button>
+ 
+<button class="btn btn-outline-info" style="margin-top:10px" type="submit"> Post </button>
 <br>
-<span><strong>
-    Already have an account? <a href={% url 'login' %}>Log in</a>
-</strong></span>
-
 </form>
 </div>
 {% endblock %}
