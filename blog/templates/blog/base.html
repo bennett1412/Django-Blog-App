@@ -9,7 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    
 </head>
+<style>
+.dark {
+    filter: invert(1);
+    background: #252525;
+}
 
+.flip {
+    filter: invert(1);
+}
+
+
+</style>
 <body style="background-image:url("static/bg-img.JPG")">
     
     {% include 'blog/navbar.html' %}
@@ -24,6 +35,39 @@
     {% block content %}
     {% comment %} replaces me {% endcomment %}
     {% endblock %}
+
+
+
+    <script> 
+    try {
+        var curtheme = localStorage.getItem('theme');
+        if (curtheme=='dark'){
+            theme(false);
+        };
+    }
+    catch(err) {
+        localStorage.setItem('theme', 'light');
+    };
+
+    function theme() {
+        
+            var element = document.body;
+            element.classList.toggle("dark");
+            // prevent img flip
+            var elements = document.getElementsByTagName("img");
+            for (let index = 0; index < elements.length; index++) {
+                const element = elements[index];
+                element.classList.toggle("flip");
+            }
+            // toggle button
+            var img1 = "https://www.nicepng.com/png/full/121-1215503_sun-icon-white-sun-blue-background.png",
+                img2 = "https://img.icons8.com/ios-glyphs/30/000000/moon-symbol.png";
+            var imgElement = document.getElementById('theme-switch');
+            imgElement.src = (imgElement.src === img1) ? img2 : img1;
+    };
+    </script>
     
 </body>
+
+
 </html>
