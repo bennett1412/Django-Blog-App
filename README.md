@@ -1,2 +1,2 @@
 # Django-Blog-App
-[work in progress]
+A small blog application where users can sign up and, write and read blog posts.
