@@ -1,3 +1,4 @@
+import django_heroku
 """
 Django settings for anime_blog project.
 
@@ -138,3 +139,5 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = 'blog:blog-home'
 
 LOGIN_URL = 'login'
+
+django_heroku.settings(locals())
