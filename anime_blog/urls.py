@@ -27,10 +27,13 @@ urlpatterns = [
     path('profile/',ProfileView,name="profile"),
     path('login/', auth_views.LoginView.as_view(template_name='blogUsers/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='blogUsers/logout.html'), name='logout'),
-    
+
     #path('blog/', include('vlog.urls'))
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-     
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_ROOT)

@@ -1,0 +1,280 @@
+
+  :root{
+    --background: #727ee8;
+  }
+
+  h1{
+  margin: 25px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(43, 12, 190);
+  }
+
+  header{
+    background: var(--background);
+    position:fixed;
+    text-align: center;
+    z-index: 999;
+    width:100%;
+    color:White;
+
+  }
+
+  body{
+    margin: 0px;
+    background-color:white;
+  }
+
+  .account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+    object-fit: contain;
+  }
+  
+  .article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
+    object-fit: cover;
+  }
+  nav{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #727ee8;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top : 100%;
+    text-align:left;
+    left:0;
+    transform: scale(1,0);
+    transform-origin:top;
+    transition: transform 400ms ease-in-out;
+  }
+
+  .logo a{
+    color:white;
+  }
+
+  h5 a:hover{
+    color:black;
+    text-decoration: none;
+  }
+
+  nav ul{
+    margin: 0;
+    padding:0;
+    list-style:none;
+  }
+  
+  nav li{
+    margin-bottom: 1em;
+    margin-left: 1em;
+    width: 0%;
+  }
+
+   nav a{
+    color:white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    
+    background:var(--background);
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+  }
+
+  .nav-toggle:checked ~ nav a{
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+  }
+
+  nav a:hover {
+    color:black;
+  }
+
+  .nav-link{
+    color: white;
+  }
+
+  .nav-toggle{
+    display:none;
+  }
+
+  .nav-toggle:checked ~ nav{
+    transform: scale(1,1);
+  }
+
+  .nav-toggle-label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height:100%;
+    display: flex;
+    align-items: center;
+   
+  }
+  
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after{
+    display: block;
+    background: white;
+    height: 2px;
+    width:2em;
+    border-radius:2px;
+    position: relative;
+  }
+
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after{
+    content: '';
+    position: absolute;
+  }
+
+  .nav-toggle-label span::before{
+    bottom:7px;
+  }
+
+  .nav-toggle-label span::after{
+   top:7px;
+  }
+
+  @media screen and (min-width: 800px){
+
+    .nav-toggle-label{
+      display:none; 
+    }
+
+    header{
+      display: grid;
+      grid-template-columns: 1fr auto minmax(600px,1fr);
+    }
+
+    
+    
+    .logo{
+      display: flex;
+      align-items: center;
+      margin-left: 1em;
+      margin-top:7px;
+    }
+
+    nav{
+      all:unset;
+      grid-column:3/4;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    nav a{
+      opacity: 1;
+    }
+
+    nav ul{
+      display: flex;
+    }
+    nav li {
+      margin-left: 1em;
+      margin-bottom: 0;
+      width: 100%;
+    }
+    .last-nav{
+      margin-right:10px;
+    }
+    .article-content{ 
+      width: 60%;
+      font-size: medium;
+    }
+
+    .container{
+      max-width: 47%;
+      font-size: medium;
+    }
+  }
+
+  .author-name {
+    color: #3441bb;
+  }
+  a.author-name:hover {
+    color: #828ef3;
+    text-decoration: none;
+  }
+
+  .article-title {
+    color: #3441bb;
+  }
+
+  a.article-title:hover {
+    color: #828ef3;
+    text-decoration: none;
+  }
+
+  .article-content{ 
+    color: #3441bb !important;
+    padding: 5px;
+    border: 5px solid  #3442bbba;
+    border-radius: 10px;
+    display: block;
+    max-width: 85%;  
+    margin: 0 auto;
+    height: auto;
+    text-decoration: dotted;
+    font-weight: 300;
+    text-align: justify;
+    background-color: white;
+  }
+
+  .profile-img{
+    display: flex;
+    align-content: flex-start;
+  }
+
+  .blog-title{
+    text-align: center !important;
+    size:30px;
+    color:red !important;
+  }
+
+  .blog-date{
+    font-size: small;
+    text-align: right;
+  }
+
+  .container{
+    color: #3441bb !important;
+    padding: 8px;
+    border: 7px solid  #3442bbba;
+    border-radius: 10px;
+    display: block;
+    position: relative;
+    top:2em;
+    width: 80%;
+    margin: 0 auto;
+    height: auto;
+    text-decoration: dotted;
+    font-weight: 300;
+    text-align: justify !important;
+    background-color: white; 
+  }
+
+  .date{
+    font-size: 1rem;
+    color: #2f3fccc0;
+  }
+
+  .profile-text{
+    text-align:center;
+  }
+  
+  .page-buttons{
+    text-align:center;    
+  }
+
+  .page-buttons .btn{
+      background-color:var(--background);
+      color:white;
+  }
