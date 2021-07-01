@@ -23,16 +23,16 @@
 <div class="page-buttons">
 {% if is_paginated %}
     {% if page_obj.has_previous %}
-        <a href="?page=1" class="btn btn-outline-info mb-4">First</a>
-        <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-info mb-4">Previous</a>    
+        <a href="?page=1" class="btn mb-4">First</a>
+        <a href="?page={{ page_obj.previous_page_number }}" class="btn mb-4">Previous</a>    
     {% endif %}
 {% endif %}
 
 {% for num in page_obj.paginator.page_range %}
     {% if page_obj.number == num %}
-        <a class="btn btn-info mb-4" href="?page={{ num }}" > {{num}} </a>
+        <a class="btn mb-4" href="?page={{ num }}" > {{num}} </a>
         {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-        <a href="?page={{ num }}" class="btn btn-outline-info mb-4">{{ num }}</a>
+        <a href="?page={{ num }}" class="btn mb-4">{{ num }}</a>
     {% endif %}
 {% endfor %}     
     {% if page_obj.has_next %}
