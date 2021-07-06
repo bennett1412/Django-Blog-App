@@ -35,4 +35,4 @@ def ProfileView(request):
         'u_form':u_form,
         'p_form':p_form
     }
-    return render(request,'blogusers/profile.html',context)    
+    return render(request,'blogUsers/profile.html',context)    
