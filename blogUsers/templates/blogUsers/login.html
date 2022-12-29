@@ -4,7 +4,7 @@
 <div class='container'>
 <form method="POST">{% csrf_token %}
 <legend class="border-bottom mb-4"> Log in </legend>
-{% comment %} {% for field in form %}
+{% for field in form %}
     <p>
       <strong>{{ field.label_tag }}</strong>
       <span class="float-right"> {{ field | attr:"class:form-control" }} </span>
@@ -12,12 +12,12 @@
         <p style="color: red">{{ error }}</p>
       {% endfor %}
     </p>
- {% endfor %}    {% endcomment %}
- {{form.as_p }}
+ {% endfor %}   
+ {% comment %} {{form.as_p }} {% endcomment %}
 <button class="btn btn-outline-info" style="margin:5px" type="submit"> Login</button>
 <br>
 <span><strong>
-    Need An Account?<a class="ml-2" href={% url 'register' %}>Sign in</a>
+    Need An Account?<a class="ml-2" href={% url 'register' %}>Sign Up</a>
 </strong></span>
 
 </form>
