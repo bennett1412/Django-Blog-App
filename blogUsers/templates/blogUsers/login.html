@@ -4,16 +4,20 @@
 <div class='container'>
 <form method="POST">{% csrf_token %}
 <legend class="border-bottom mb-4"> Log in </legend>
-{% for field in form %}
+    <div>
     <p>
-      <strong>{{ field.label_tag }}</strong>
-      <span class="float-right"> {{ field | attr:"class:form-control" }} </span>
-      {% for error in field.errors %}
-        <p style="color: red">{{ error }}</p>
-      {% endfor %}
+      <strong><label for={{ form.username.id_for_label }}>Username:</label></strong>
+      <span class="float-right"> {{ form.username | attr:"class:form-control" }}</span>
+      <span class="float-right" style="color:red;"> {{ form.password.errors }} </span>
     </p>
- {% endfor %}   
- {% comment %} {{form.as_p }} {% endcomment %}
+    <p>
+      <strong><label for={{ form.password.id_for_label }}>Password:</label></strong>
+      <span class="float-right"> {{ form.password | attr:"class:form-control" }}</span>
+      <span class="float-right" style="color:red;"> {{ form.password.errors }} </span>
+    </p>
+    {{ form.non_field_errors }}
+  </div> 
+
 <button class="btn btn-outline-info" style="margin:5px" type="submit"> Login</button>
 <br>
 <span><strong>

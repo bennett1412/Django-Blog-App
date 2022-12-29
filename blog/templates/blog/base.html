@@ -1,84 +1,76 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     {% comment %} {% include 'blog/style.html' %} {% endcomment %}
-    
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}" />
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}" />
     <title>Blog</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   
-</head>
-<style>
-.dark {
-    filter: invert(1);
-    background: #252525;
-}
-
-.flip {
-    filter: invert(1);
-}
-
-
-</style>
-<body style="background-image:url("static/bg-img.JPG")">
-    
-    {% include 'blog/navbar.html' %}
-    <br>
-    {% if messages %}
-    {% for message in messages %}
-    <div>
-    {{message}}
-    </div>
-    {% endfor %}
-    {% endif %}
-    {% block content %}
-    {% comment %} replaces me {% endcomment %}
-    {% endblock %}
-
-
-
-    <script> 
-    try {
-        var curtheme = localStorage.getItem('theme');
-        if (curtheme=='dark'){
-            theme(false);
-        };
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+  </head>
+  <style>
+    .dark {
+      filter: invert(1);
+      background: #252525;
     }
-    catch(err) {
-        localStorage.setItem('theme', 'light');
-    };
 
-    function theme(toggle=true) {
+    .flip {
+      filter: invert(1);
+    }
+  </style>
+  <body style="background-image: ">
+    {% include 'blog/navbar.html' %}
+    <br />
+    {% if messages %} {% for message in messages %}
+    <div>{{message}}</div>
+    {% endfor %} {% endif %} {% block content %} {% comment %} replaces me
+    {%endcomment %} {% endblock %}
 
-        if (toggle){
-            var curtheme = localStorage.getItem('theme');
-            if (curtheme=='dark'){
-                localStorage.setItem('theme', 'light');
-            }
-            else{
-                localStorage.setItem('theme', 'dark');
-            }
+    <script>
+      try {
+        var curtheme = localStorage.getItem("theme");
+        if (curtheme == "dark") {
+          theme(false);
         }
-        console.log(toggle)
+      } catch (err) {
+        localStorage.setItem("theme", "light");
+      }
+
+      function theme(toggle = true) {
+        if (toggle) {
+          var curtheme = localStorage.getItem("theme");
+          if (curtheme == "dark") {
+            localStorage.setItem("theme", "light");
+          } else {
+            localStorage.setItem("theme", "dark");
+          }
+        }
+        console.log(toggle);
         var element = document.body;
         element.classList.toggle("dark");
         // prevent img flip
         var elements = document.getElementsByTagName("img");
         for (let index = 0; index < elements.length; index++) {
-            const element = elements[index];
-            element.classList.toggle("flip");
+          const element = elements[index];
+          element.classList.toggle("flip");
         }
         // toggle button
-        var img1 = "https://www.nicepng.com/png/full/121-1215503_sun-icon-white-sun-blue-background.png",
-            img2 = "https://img.icons8.com/ios-glyphs/30/000000/moon-symbol.png";
-        var imgElement = document.getElementById('theme-switch');
-        imgElement.src = (imgElement.src === img1) ? img2 : img1;
-    };
+        var img1 =
+            "https://www.nicepng.com/png/full/121-1215503_sun-icon-white-sun-blue-background.png",
+          img2 = "https://img.icons8.com/ios-glyphs/30/000000/moon-symbol.png";
+        var imgElement = document.getElementById("theme-switch");
+        imgElement.src = imgElement.src === img1 ? img2 : img1;
+      }
     </script>
-    
-</body>
-
-
+  </body>
 </html>
