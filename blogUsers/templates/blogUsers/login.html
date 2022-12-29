@@ -5,24 +5,28 @@
 <form method="POST">{% csrf_token %}
 <legend class="border-bottom mb-4"> Log in </legend>
     <div>
-    <p>
-      <strong><label for={{ form.username.id_for_label }}>Username:</label></strong>
-      <span class="float-right"> {{ form.username | attr:"class:form-control" }}</span>
+    <p >
+      <div class="login-field">
+        <strong><label for={{ form.username.id_for_label }}>Username:</label></strong>
+        <span class="float-right"> {{ form.username | attr:"class:form-control" }}</span>
+      </div>
       <span class="float-right" style="color:red;"> {{ form.password.errors }} </span>
     </p>
     <p>
-      <strong><label for={{ form.password.id_for_label }}>Password:</label></strong>
-      <span class="float-right"> {{ form.password | attr:"class:form-control" }}</span>
+      <div class="login-field">
+        <strong><label for={{ form.password.id_for_label }}>Password:</label></strong>
+        <span class="float-right"> {{ form.password | attr:"class:form-control" }}</span>
+      </div>
       <span class="float-right" style="color:red;"> {{ form.password.errors }} </span>
     </p>
-    {{ form.non_field_errors }}
+    <span style="text-align:right"> {{ form.non_field_errors }} </span>
   </div> 
-
-<button class="btn btn-outline-info" style="margin:5px" type="submit"> Login</button>
-<br>
-<span><strong>
+<div class="login-ops">
+  <strong>
     Need An Account?<a class="ml-2" href={% url 'register' %}>Sign Up</a>
-</strong></span>
+  </strong>
+  <button class="btn btn-outline-info" style="margin:5px" type="submit"> Login</button>
+</div>
 
 </form>
 </div>

@@ -7,18 +7,20 @@
 {% for field in form %}
     <p>
       <strong>{{ field.label_tag }}
-      <span class="float-right"> {{ field | attr:"class:form-control" }} </span>
+      <span > {{ field | attr:"class:form-control" }} </span>
       </strong>
       {% for error in field.errors %}
-        <p style="color: red">{{ error }}</p>
+        <p style="color: red; text-align:right">{{ error }}</p>
       {% endfor %}
     </p>
  {% endfor %}   
-<button class="btn btn-outline-info" style="margin:5px" type="submit"> Register </button>
-<br>
-<span><strong>
-    Already have an account? <a href={% url 'login' %}>Log in</a>
-</strong></span>
+ <br>
+ <div class="login-ops">
+ <strong>
+   Already have an account? <a href={% url 'login' %}>Log in</a>
+  </strong>
+  <button class="btn btn-outline-info" style="margin:5px" type="submit"> Register </button>
+</div>
 
 </form>
 </div>

@@ -1,7 +1,10 @@
 :root {
   --background: #727ee8;
+  --background-dark:#454c8d;
 }
-
+html,body{
+    height: 100%;
+}
 h1 {
   margin: 25px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -268,6 +271,40 @@ a.article-title:hover {
   text-align: center;
 }
 
-.btn {
-  background: black;
+
+.btn:hover  {
+  background: var(--background);
+}
+.btn-outline-info {
+  color: var(--background);
+  border-color: var(--background);
+}
+.btn-outline-info:hover {
+  border-color: var(--background);
+}
+.btn-info{
+    background-color: var(--background);
+    border-color: var(--background);
+}
+.btn-info:hover{
+    border-color: var(--background-dark);
+    background-color: var(--background-dark);
+}
+.errorlist {
+  color: red;
+  list-style: none;
+}
+
+/* login page styles */
+
+.login-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-ops {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

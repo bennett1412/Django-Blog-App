@@ -29,12 +29,12 @@
     }
   </style>
   <body style="background-image: ">
-    {% include 'blog/navbar.html' %}
+    {% include 'blog/navbar.html' %} 
     <br />
-    {% if messages %} {% for message in messages %}
-    <div>{{message}}</div>
-    {% endfor %} {% endif %} {% block content %} {% comment %} replaces me
-    {%endcomment %} {% endblock %}
+    
+    {% block content %}
+        {% comment %} replaces me {%endcomment %} 
+    {% endblock %}
 
     <script>
       try {
